@@ -7,6 +7,12 @@ class UserRepository {
     fun getAllPersonList(): List<PersonDTO> {
         return listOf(
             PersonDTO(
+                name = "Mansi",
+                age = 25,
+                gender = "Female",
+                address = "Gomti Nagar Lucknow 226010"
+            ),
+            PersonDTO(
                 name = "Poonam",
                 age = 25,
                 gender = "Female",

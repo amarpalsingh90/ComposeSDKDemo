@@ -17,11 +17,11 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import com.example.uisdk.PreviewData
 import com.example.uisdk.model.BaseDataModel
-import com.example.uisdk.model.CommonListData
+import com.example.uisdk.model.CommonUIData
 import com.example.uisdk.ui.theme.ComposeSDKDemoTheme
 
 @Composable
-fun <T> CommonList(
+fun <T> CustomVerticalList(
     data: List<T>,
     modifier: Modifier = Modifier,
     contentPadding: PaddingValues = PaddingValues(horizontal = 16.dp),
@@ -36,9 +36,9 @@ fun <T> CommonList(
     ) {
         items(items = data) { item ->
             if (item is BaseDataModel) {
-                val cmItem = (item as BaseDataModel).getCommonListDataModel()
+                val personData = (item as BaseDataModel).getPersonData()
                 PerSonItem(
-                    person = cmItem,
+                    person = personData,
                     onClick = { onItemSelected(item) }
                 )
             }
@@ -50,8 +50,8 @@ fun <T> CommonList(
 @OptIn(ExperimentalMaterialApi::class)
 @Composable
 private fun PerSonItem(
-    person: CommonListData,
-    onClick: (CommonListData) -> Unit = {}
+    person: CommonUIData.PersonData,
+    onClick: (CommonUIData.PersonData) -> Unit = {}
 ) {
     Card(
         onClick = { onClick(person) },
@@ -82,7 +82,7 @@ private fun PerSonItem(
 @Preview
 private fun Preview_Light() {
     ComposeSDKDemoTheme {
-        CommonList(data = MutableList(5) { PreviewData.dataItem })
+        CustomVerticalList(data = MutableList(5) { PreviewData.dataItem })
     }
 }
 

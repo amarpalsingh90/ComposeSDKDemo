@@ -11,8 +11,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 import com.example.composesdkdemo.home.HomeScreen
 import com.example.composesdkdemo.model.PersonDTO
-import com.example.uisdk.common.CommonList
-import com.example.uisdk.model.CommonListData
+import com.example.uisdk.common.CustomVerticalList
 import com.example.uisdk.ui.theme.ComposeSDKDemoTheme
 import dagger.hilt.android.AndroidEntryPoint
 
@@ -40,7 +39,7 @@ class MainActivity : ComponentActivity() {
 @Composable
 fun DefaultPreview() {
     ComposeSDKDemoTheme {
-        CommonList(
+        CustomVerticalList(
             data = listOf(
                 PersonDTO("Amar", 19, "M", "AYX"),
                 PersonDTO("Vijay", 20, "M", "AYX")
