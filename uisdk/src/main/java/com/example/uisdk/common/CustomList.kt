@@ -16,26 +16,29 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import com.example.uisdk.PreviewData
-import com.example.uisdk.model.Person
+import com.example.uisdk.model.BaseDataModel
+import com.example.uisdk.model.CommonListData
 import com.example.uisdk.ui.theme.ComposeSDKDemoTheme
 
 @Composable
 fun <T> CommonList(
     data: List<T>,
     modifier: Modifier = Modifier,
+    contentPadding: PaddingValues = PaddingValues(horizontal = 16.dp),
     onItemSelected: (T) -> Unit = {}
 ) {
     LazyColumn(
-        contentPadding = PaddingValues(horizontal = 16.dp),
+        contentPadding = contentPadding,
         verticalArrangement = Arrangement.spacedBy(16.dp),
         modifier = Modifier
             .fillMaxWidth()
             .then(modifier)
     ) {
         items(items = data) { item ->
-            if (item is Person) {
+            if (item is BaseDataModel) {
+                val cmItem = (item as BaseDataModel).getCommonListDataModel()
                 PerSonItem(
-                    person = item,
+                    person = cmItem,
                     onClick = { onItemSelected(item) }
                 )
             }
@@ -47,14 +50,15 @@ fun <T> CommonList(
 @OptIn(ExperimentalMaterialApi::class)
 @Composable
 private fun PerSonItem(
-    person: Person,
-    onClick: (Person) -> Unit = {}
+    person: CommonListData,
+    onClick: (CommonListData) -> Unit = {}
 ) {
     Card(
         onClick = { onClick(person) },
         modifier = Modifier
             .padding(horizontal = 8.dp, vertical = 8.dp)
-            .fillMaxWidth(),
+            .fillMaxWidth()
+            .padding(),
         elevation = 2.dp,
         backgroundColor = MaterialTheme.colors.background,
         shape = RoundedCornerShape(corner = CornerSize(16.dp))

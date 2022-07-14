@@ -1,9 +1,10 @@
 package com.example.composesdkdemo.home
 
-import com.example.uisdk.model.Person
+import com.example.composesdkdemo.model.PersonDTO
+
 
 data class HomeState(
     var isLoading: Boolean = false,
-    var data: List<Person> = emptyList(),
+    var data: List<PersonDTO> = emptyList(),
     var error: String = ""
 )

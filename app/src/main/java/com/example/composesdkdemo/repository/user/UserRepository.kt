@@ -1,13 +1,19 @@
-package com.example.data.remote
+package com.example.composesdkdemo.repository.user
 
-import com.example.data.model.PersonDTO
+import com.example.composesdkdemo.model.PersonDTO
 
-class RemoteData {
 
-    fun getAllPerson(): List<PersonDTO> {
+class UserRepository {
+    fun getAllPersonList(): List<PersonDTO> {
         return listOf(
             PersonDTO(
-                name = "Amar Pal",
+                name = "Poonam",
+                age = 25,
+                gender = "Female",
+                address = "Gomti Nagar Lucknow 226010"
+            ),
+            PersonDTO(
+                name = "Gourav",
                 age = 31,
                 gender = "Male",
                 address = "Gomti Nagar Lucknow 226010"

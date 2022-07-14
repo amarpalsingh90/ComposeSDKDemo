@@ -9,6 +9,7 @@ import com.example.uisdk.common.CommonList
 @Composable
 fun HomeScreen(viewModel: HomeViewModel = hiltViewModel()) {
     val response = viewModel.persons.value
+    response.isLoading
     response.data?.let {
         val context = LocalContext.current
         CommonList(data = response.data) {

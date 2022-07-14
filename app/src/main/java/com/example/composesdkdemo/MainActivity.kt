@@ -11,7 +11,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 import com.example.composesdkdemo.home.HomeScreen
 import com.example.uisdk.common.CommonList
-import com.example.uisdk.model.Person
+import com.example.uisdk.model.CommonListData
 import com.example.uisdk.ui.theme.ComposeSDKDemoTheme
 import dagger.hilt.android.AndroidEntryPoint
 
@@ -39,8 +39,8 @@ fun DefaultPreview() {
     ComposeSDKDemoTheme {
         CommonList(
             data = listOf(
-                Person("Amar", 19, "M", "AYX"),
-                Person("Vijay", 20, "M", "AYX")
+                CommonListData("Amar", 19, "M", "AYX"),
+                CommonListData("Vijay", 20, "M", "AYX")
             )
         )
     }

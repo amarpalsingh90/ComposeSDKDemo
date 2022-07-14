@@ -1,9 +1,9 @@
 package com.example.uisdk
 
-import com.example.uisdk.model.Person
+import com.example.uisdk.model.CommonListData
 
 internal object PreviewData {
-    val person = Person(
+    val person = CommonListData(
         name = "Amar Pal",
         age = 31,
         gender = "Male",
