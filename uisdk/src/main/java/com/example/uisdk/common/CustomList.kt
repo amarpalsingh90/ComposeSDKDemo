@@ -79,10 +79,10 @@ private fun PerSonItem(
 }
 
 @Composable
-@Preview("Light")
+@Preview
 private fun Preview_Light() {
     ComposeSDKDemoTheme {
-        CommonList(data = MutableList(5) { PreviewData.person })
+        CommonList(data = MutableList(5) { PreviewData.dataItem })
     }
 }
 

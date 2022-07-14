@@ -12,6 +12,7 @@ fun HomeScreen(viewModel: HomeViewModel = hiltViewModel()) {
     response.isLoading
     response.data?.let {
         val context = LocalContext.current
+
         CommonList(data = response.data) {
             Toast.makeText(context, it.address, Toast.LENGTH_SHORT).show()
         }

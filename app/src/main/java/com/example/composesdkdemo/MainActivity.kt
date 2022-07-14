@@ -10,6 +10,7 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 import com.example.composesdkdemo.home.HomeScreen
+import com.example.composesdkdemo.model.PersonDTO
 import com.example.uisdk.common.CommonList
 import com.example.uisdk.model.CommonListData
 import com.example.uisdk.ui.theme.ComposeSDKDemoTheme
@@ -33,14 +34,16 @@ class MainActivity : ComponentActivity() {
     }
 }
 
+
+
 @Preview(showBackground = true)
 @Composable
 fun DefaultPreview() {
     ComposeSDKDemoTheme {
         CommonList(
             data = listOf(
-                CommonListData("Amar", 19, "M", "AYX"),
-                CommonListData("Vijay", 20, "M", "AYX")
+                PersonDTO("Amar", 19, "M", "AYX"),
+                PersonDTO("Vijay", 20, "M", "AYX")
             )
         )
     }

@@ -1,12 +1,12 @@
 package com.example.uisdk
 
+import com.example.uisdk.model.BaseDataModel
 import com.example.uisdk.model.CommonListData
 
 internal object PreviewData {
-    val person = CommonListData(
-        name = "Amar Pal",
-        age = 31,
-        gender = "Male",
-        address = "Gomti Nagar Lucknow 226010"
-    )
+    var dataItem = object : BaseDataModel() {
+        override fun getCommonListDataModel(): CommonListData {
+            return CommonListData("Amar", 32, "Male", "Ratanpur")
+        }
+    }
 }
